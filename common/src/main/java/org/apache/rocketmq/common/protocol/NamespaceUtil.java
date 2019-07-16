@@ -92,11 +92,11 @@ public class NamespaceUtil {
         String resourceWithoutRetryAndDLQ = withOutRetryAndDLQ(resourceWithOutNamespace);
         StringBuffer strBuffer = new StringBuffer();
 
-        if (isRetryTopic(resourceWithOutNamespace)) {
+        if (isRetryTopic(resourceWithOutNamespace)) {           //判断是否为重试队列
             strBuffer.append(MixAll.RETRY_GROUP_TOPIC_PREFIX);
         }
 
-        if (isDLQTopic(resourceWithOutNamespace)) {
+        if (isDLQTopic(resourceWithOutNamespace)) {             //判断是否为死信队列
             strBuffer.append(MixAll.DLQ_GROUP_TOPIC_PREFIX);
         }
 
